@@ -70,6 +70,11 @@ endfunction
 
 
 " Add all the default extensions
+" Mappings for Objective-C and Objective-C++
+call <SID>AddAlternateExtensionMapping('m','h')
+call <SID>AddAlternateExtensionMapping('h','m')
+call <SID>AddAlternateExtensionMapping("mm",'h')
+call <SID>AddAlternateExtensionMapping('h',"mm")
 " Mappings for C and C++
 call <SID>AddAlternateExtensionMapping('h',"c,cpp,cxx,cc,CC")
 call <SID>AddAlternateExtensionMapping('H',"C,CPP,CXX,CC")
@@ -83,11 +88,6 @@ call <SID>AddAlternateExtensionMapping('cc',"h")
 call <SID>AddAlternateExtensionMapping('CC',"H,h")
 call <SID>AddAlternateExtensionMapping('cxx',"h")
 call <SID>AddAlternateExtensionMapping('CXX',"H")
-" Mappings for Objective-C and Objective-C++
-call <SID>AddAlternateExtensionMapping('m','h')
-call <SID>AddAlternateExtensionMapping('h','m')
-call <SID>AddAlternateExtensionMapping("mm",'h')
-call <SID>AddAlternateExtensionMapping('h',"mm")
 " Mappings for PSL7
 call <SID>AddAlternateExtensionMapping('psl',"ph")
 call <SID>AddAlternateExtensionMapping('ph',"psl")

@@ -13,24 +13,18 @@ if [ -d $HOME/bin ] ; then
 fi
 
 alias p4st="pushd $P4ROOT;/usr/local/bin/perforce_status|less;popd"
-alias gitp4on="cp /Users/nickflink/.gitconfig-p4 /Users/nickflink/.gitconfig"
-alias gitp4off="cp /Users/nickflink/.gitconfig-cmd /Users/nickflink/.gitconfig"
+alias gitp4on="cp $HOME/.gitconfig-p4 $HOME/.gitconfig"
+alias gitp4off="cp $HOME/.gitconfig-cmd $HOME/.gitconfig"
 alias gitclog="git log --graph --full-history --all --color --pretty=format:\"%C(yellow)%h %C(green)%d %C(red)%ce %C(blue)%cr %C(reset)%s\""
 alias gitcdiff="git diff --color"
-alias cdft="cd /Users/nickflink/Projects/GameDev/C4FlipCC"
-alias cdms="cd /Users/nickflink/Projects/MacSetup"
-##
-# Your previous /Users/nickflink/.profile file was backed up as /Users/nickflink/.profile.macports-saved_2011-07-09_at_19:15:09
-##
+alias cdft="cd $HOME/Projects/GameDev/C4FlipCC"
+alias cdms="cd $HOME/Projects/MacSetup"
 
 # MacPorts Installer addition on 2011-07-09_at_19:15:09: adding an appropriate PATH variable for use with MacPorts.
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 
-##
-# Your previous /Users/nickflink/.profile file was backed up as /Users/nickflink/.profile.macports-saved_2011-07-09_at_19:20:35
-##
 #Scons specific stuff
 #export SCONS_DIR=/usr/local/Cellar/scons/2.1.0
 export SCONS_DIR=/usr/local/Cellar/scons/2.1.0/libexec/scons-local

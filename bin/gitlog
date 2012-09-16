@@ -1,0 +1,13 @@
+#/bin/bash
+GREP_COLOR='1;32'; 
+echo ============reflog============;
+for i in `seq 1 5`; do
+    git --no-pager log --pretty=oneline|head -n $i|tail -n 1
+    CUR_HEAD=`cat .git/HEAD`
+    FOUND="`echo $i|grep $CUR_HEAD`";
+    if [ "$FOUND" != "" ] ; then
+        echo $i|grep --color=auto $CUR_HEAD;
+    else
+        echo $i;
+    fi
+done

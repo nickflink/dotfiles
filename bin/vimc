@@ -1,0 +1,3 @@
+#!/bin/bash
+#vim $1h -c "vnew $1m"
+vim $1h -c "vnew $1cpp"

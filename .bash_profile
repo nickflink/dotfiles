@@ -2,9 +2,14 @@
 # see /usr/share/doc/bash/examples/startup-files for examples.
 # the files are located in the bash-doc package.
 
+if [ -f /usr/lib/tuenti_tools/env/profile ]
+then
+    source /usr/lib/tuenti_tools/env/profile
+fi
+
 # include .bashrc if it exists
 if [ -f ~/.bashrc ]; then
-    . ~/.bashrc
+    source ~/.bashrc
 fi
 
 # set PATH so it includes user's private bin if it exists
@@ -12,6 +17,11 @@ if [ -d $HOME/bin ] ; then
     PATH=$HOME/bin:"${PATH}"
 fi
 
+# set WORKON_HOME to venvs if we have virtualenvwrapper installed
+if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
+    export WORKON_HOME=~/venvs
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 alias p4st="pushd $P4ROOT;/usr/local/bin/perforce_status|less;popd"
 alias gitp4on="cp $HOME/.gitconfig-p4 $HOME/.gitconfig"
 alias gitp4off="cp $HOME/.gitconfig-cmd $HOME/.gitconfig"

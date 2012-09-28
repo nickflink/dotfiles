@@ -1,0 +1,11 @@
+#!/bin/bash
+if [ $# -gt 0 ]; then
+	PORKY_NAME="$HOME/branches/$1"
+else
+	PORKY_NAME="$HOME/branches/porky"
+fi
+echo porky cloning
+hg clone stable $PORKY_NAME;
+echo "%include /usr/lib/tuenti_tools/mercurial/localhooks/hgrc" > .hg/hgrc;
+echo -e "[bookmarks]\ntrack.current = True" >> ${PORKY_NAME}/.hg/hgrc;
+echo "hg bookmark -r tip bstable"|bash -x;

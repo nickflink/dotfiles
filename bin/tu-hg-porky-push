@@ -1,0 +1,22 @@
+#!/bin/bash
+function getBookmarkName() {
+	echo "b$1";
+}
+#until i figure out what happened
+echo porky pushing cancelled
+exit 1
+REMOTE_REPO_NAME="$1"; 
+MARK_NAME=`getBookmarkName $REMOTE_REPO_NAME`;
+hg out $REMOTE_REPO_NAME -r $MARK_NAME;
+echo -n "pushing in 5...";
+sleep 1;
+echo -n "4...";
+sleep 1;
+echo -n "3...";
+sleep 1;
+echo -n "2...";
+sleep 1;
+echo -n "1...";
+sleep 1;
+echo "now!!";
+echo "hg push $REMOTE_REPO_NAME -r $MARK_NAME"|bash -x;

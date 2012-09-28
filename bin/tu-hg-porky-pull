@@ -1,0 +1,12 @@
+#!/bin/bash
+function getBookmarkName() {
+	echo "b$1";
+}
+
+echo porky pulling
+MARK_NAME=`getBookmarkName $1`;
+echo "markname = $MARK_NAME";
+echo "hg pull $@"|bash -x
+REMOTE_ID=`hg identify $1`;
+echo "hg bookmark -f -r $REMOTE_ID $MARK_NAME"|bash -x;
+echo "hg update $MARK_NAME"|bash -x;

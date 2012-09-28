@@ -15,7 +15,7 @@ fi
 alias p4st="pushd $P4ROOT;/usr/local/bin/perforce_status|less;popd"
 alias gitp4on="cp $HOME/.gitconfig-p4 $HOME/.gitconfig"
 alias gitp4off="cp $HOME/.gitconfig-cmd $HOME/.gitconfig"
-alias gitclog="git log --graph --full-history --all --color --pretty=format:\"%C(yellow)%h %C(green)%d %C(red)%ce %C(blue)%cr %C(reset)%s\""
+alias gitclog="git log --graph --full-history --all --color --pretty=format:\"%C(yellow)%h %C(green)%d %C(red)%ce %C(cyan)%cr %C(reset)%s\""
 alias gitcdiff="git diff --color"
 alias cdft="cd $HOME/Projects/GameDev/C4FlipCC"
 alias cdms="cd $HOME/Projects/MacSetup"
@@ -39,7 +39,9 @@ export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r8
 export ANDROID_SDK_ROOT=$HOME/android-sdks/old-sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export ANDROID_NDK_HOME=$ANDROID_NDK_ROOT
-PATH=$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin/:$ANDROID_NDK_ROOT:$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/platform-tools/:$ANDROID_SDK_ROOT/tools/:$HOME/troot/depot_tools/:$PATH
+#DISTCCD config
+export DISTCCD_PATH=$ANDROID_NDK_ROOT/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin/:$ANDROID_NDK_ROOT/toolchains/x86-4.4.3/prebuilt/darwin-x86/bin/:$ANDROID_NDK_ROOT/toolchains/mipsel-linux-android-4.4.3/prebuilt/darwin-x86/bin/
+PATH=$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin/:$ANDROID_NDK_ROOT:$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/platform-tools/:$ANDROID_SDK_ROOT/tools/:$HOME/troot/depot_tools/:$DISTCCD_PATH:$PATH
 
 # Finished adapting your PATH environment variable for use with MacPorts.
 # MacPorts Installer addition on 2011-07-09_at_19:20:35: adding an appropriate PATH variable for use with MacPorts.

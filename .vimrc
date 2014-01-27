@@ -10,7 +10,6 @@ set expandtab
 set list
 set hlsearch
 set ignorecase
-set backspace+=start,eol,indent 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  window resizing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

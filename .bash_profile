@@ -43,7 +43,6 @@ export PATH=$PATH_TO_SWTOOLKIT:$PATH
 #end swtoolkit
 #Android / Java specific stuff
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK
-#export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r8e
 export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r9b
 export ANDROID_SDK_ROOT=$HOME/android-sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT

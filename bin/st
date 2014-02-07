@@ -1,0 +1,4 @@
+#!/bin/bash
+if [ "$1" != "" ]; then
+  echo -ne '\033k'$1'\033\\'
+fi

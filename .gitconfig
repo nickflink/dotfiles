@@ -3,3 +3,5 @@
   email = nickflink@github.com
 [color]
   ui = true
+[credential]
+	helper = osxkeychain

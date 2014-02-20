@@ -5,3 +5,6 @@
   ui = true
 [credential]
 	helper = osxkeychain
+[url "http://"]
+	insteadOf = git://
+	insteadOf = https://

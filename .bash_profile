@@ -32,7 +32,9 @@ alias armbadmvn="time (mvn clean install -Parmeabi,armeabi-v7a,sign,fast && mvn 
 #export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
 # Finished adapting your PATH environment variable for use with MacPorts.
 
-
+#Python VirtualEnvs
+export WORKON_HOME=~/pyvenvs
+source /usr/local/bin/virtualenvwrapper.sh
 #Scons specific stuff
 #export SCONS_DIR=/usr/local/Cellar/scons/2.1.0
 export SCONS_DIR=/usr/local/Cellar/scons/2.1.0/libexec/scons-local
@@ -56,3 +58,13 @@ PATH=$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x8
 # Finished adapting your PATH environment variable for use with MacPorts.
 # MacPorts Installer addition on 2011-07-09_at_19:20:35: adding an appropriate PATH variable for use with MacPorts.
 export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:$PATH
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH

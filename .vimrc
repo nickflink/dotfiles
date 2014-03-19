@@ -11,7 +11,7 @@ set list
 set hlsearch
 set ignorecase
 "this doesn't work on VIM - Vi IMproved 7.2 (2008 Aug 9, compiled Apr  7 2010 18:43:15)
-"set backspace+=start,eol,indent 
+set backspace+=start,eol,indent 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  window resizing
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

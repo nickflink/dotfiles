@@ -50,6 +50,7 @@ elif [ -d /usr/lib/jvm/java-6-sun ] ; then
     #linux
     JAVA_HOME="/usr/lib/jvm/java-6-sun"
 fi
+export ANT_ROOT=/usr/share/ant
 export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r9b
 export ANDROID_SDK_ROOT=$HOME/android-sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT

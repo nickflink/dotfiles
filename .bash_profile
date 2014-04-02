@@ -42,24 +42,32 @@ export SCONS_DIR=/usr/local/Cellar/scons/2.1.0/libexec/scons-local
 PATH_TO_SWTOOLKIT=$HOME/troot/swtoolkit
 export PATH=$PATH_TO_SWTOOLKIT:$PATH
 #end swtoolkit
+#pvr stuff
+if [ -f /Applications/Imagination/PowerVR/GraphicsSDK/PVRTexTool/CL/OSX_x86/PVRTexToolCL ]; then
+    export PVR_TEXTOOL="/Applications/Imagination/PowerVR/GraphicsSDK/PVRTexTool/CL/OSX_x86/PVRTexToolCL";
+    PVR_BIN="`dirname $PVR_TEXTOOL`";
+elif [ -f /Applications/Imagination/PowerVR/GraphicsSDK/PVRTexTool/CLI/OSX_x86/PVRTexToolCLI ]; then
+    export PVR_TEXTOOL="/Applications/Imagination/PowerVR/GraphicsSDK/PVRTexTool/CLI/OSX_x86/PVRTexToolCLI";
+    PVR_BIN="`dirname $PVR_TEXTOOL`";
+fi
+#end pvr stuff
 #Android / Java specific stuff
 if [ -d /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK ] ; then
     #darwin
-    JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK"
+    export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
 elif [ -d /usr/lib/jvm/java-6-sun ] ; then
     #linux
-    JAVA_HOME="/usr/lib/jvm/java-6-sun"
+    export JAVA_HOME="/usr/lib/jvm/java-6-sun"
 fi
 export ANT_ROOT=/usr/share/ant
-export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r9b
+export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r9d
 export ANDROID_SDK_ROOT=$HOME/android-sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export ANDROID_SDK=$ANDROID_SDK_ROOT
 export ANDROID_NDK_HOME=$ANDROID_NDK_ROOT
 export NDK_ROOT=$ANDROID_NDK_ROOT
 #DISTCCD config
-export DISTCCD_PATH=$ANDROID_NDK_ROOT/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin:$ANDROID_NDK_ROOT/toolchains/x86-4.4.3/prebuilt/darwin-x86/bin:$ANDROID_NDK_ROOT/toolchains/mipsel-linux-android-4.4.3/prebuilt/darwin-x86/bin
-PATH=$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin:$ANDROID_NDK_ROOT:$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/build-tools/17.0.0:$HOME/troot/depot_tools:$DISTCCD_PATH:$PATH
+PATH=$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x86/bin:$ANDROID_NDK_ROOT:$ANDROID_SDK_ROOT:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/build-tools/17.0.0:$HOME/troot/depot_tools:$PVR_BIN:$PATH
 
 # Finished adapting your PATH environment variable for use with MacPorts.
 # MacPorts Installer addition on 2011-07-09_at_19:20:35: adding an appropriate PATH variable for use with MacPorts.

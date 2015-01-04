@@ -10,6 +10,8 @@ set expandtab
 set list
 set hlsearch
 set ignorecase
+set foldmethod=indent
+set foldlevelstart=99
 "this doesn't work on VIM - Vi IMproved 7.2 (2008 Aug 9, compiled Apr  7 2010 18:43:15)
 "set backspace+=start,eol,indent 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -28,4 +30,9 @@ autocmd Filetype python set makeprg=pychecker
 autocmd Filetype python map <F5> :!python % <CR>
 autocmd Filetype python map <F7> :make % <CR>
 autocmd Filetype python set expandtab
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $HOME/.vim/a.vim
+source $HOME/.vim/matchit.vim

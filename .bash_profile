@@ -59,6 +59,7 @@ elif [ -d /usr/lib/jvm/java-6-sun ] ; then
     #linux
     export JAVA_HOME="/usr/lib/jvm/java-6-sun"
 fi
+
 export ANT_ROOT=/usr/share/ant
 export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r9d
 export ANDROID_SDK_ROOT=$HOME/android-sdk
@@ -71,4 +72,13 @@ PATH=$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x8
 
 # Finished adapting your PATH environment variable for use with MacPorts.
 # MacPorts Installer addition on 2011-07-09_at_19:20:35: adding an appropriate PATH variable for use with MacPorts.
-export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$PATH
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT=$HOME/gdoroot/Syn/cocos2d-x/tools/cocos2d-console/bin
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# python django stuff
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/directory-you-do-development-in
+source /usr/local/bin/virtualenvwrapper.sh

@@ -36,6 +36,8 @@ autocmd Filetype python set expandtab
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $HOME/.vim/a.vim
 source $HOME/.vim/matchit.vim
+source $HOME/.vim/html.vim
+filetype plugin on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  unicode suppoort
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

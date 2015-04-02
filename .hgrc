@@ -16,13 +16,13 @@ fetch =
 #keyring = /usr/lib/tuenti_tools/mercurial/extensions/keyring.py
 
 [auth]
-master-relay.prefix = http://code.tuenti.int
-mad-relay.prefix = http://mad.code.tuenti.local
-cache-relay.prefix = http://cache.code.tuenti.int
-pull-relay.prefix = http://pull.code.tuenti.int
-push-relay.prefix = http://push.code.tuenti.int
-push-relay.username = nick
-pull-relay.username = nick
+#master-relay.prefix = http://code.tuenti.int
+#mad-relay.prefix = http://mad.code.tuenti.local
+#cache-relay.prefix = http://cache.code.tuenti.int
+#pull-relay.prefix = http://pull.code.tuenti.int
+#push-relay.prefix = http://push.code.tuenti.int
+#push-relay.username = nicholas
+#pull-relay.username = nicholas
 
 [trusted]
 users = *
@@ -32,6 +32,7 @@ glog = -l 5
 fetch = -e
 
 [ui]
+username = Nicholas Flink <nicholas@sproutsocial.com>
 msgcat = msgcat
 merge = internal:merge
 ssh = ssh -C -c arcfour
@@ -55,22 +56,22 @@ track.current = True
 data-development=2c2cb8027f355ff154603b59c297707b13d3cbd7
 data-systems=eb97442ade7919d615f7ed8e993da60deb2a2dd2
 [patch-paths]
-data-development=http://pull.code.tuenti.int/devops/data-development
-data-development-push=http://push.code.tuenti.int/devops/data-development
-data-systems=ssh://hades.tuenti.int//srv/hg/ops/data-systems
+#data-development=http://pull.code.tuenti.int/devops/data-development
+#data-development-push=http://push.code.tuenti.int/devops/data-development
+#data-systems=ssh://hades.tuenti.int//srv/hg/ops/data-systems
 
 #Convenience paths for the mercurial relays
 [paths]
-config-package  = http://pull.code.tuenti.int/devops/config-package
-config-package-push   = http://push.code.tuenti.int/devops/config-package
-data-development = http://pull.code.tuenti.int/devops/data-development
-data-development-push = http://push.code.tuenti.int/devops/data-development
-templates = http://pull.code.tuenti.int/devops/templates
-templates-push = http://push.code.tuenti.int/devops/templates
-tuenti-dev = http://pull.code.tuenti.int/tuenti/tuenti-dev
-tuenti-dev-push = http://push.code.tuenti.int/tuenti/tuenti-dev
-tuenti-ng = http://pull.code.tuenti.int/tuenti/tuenti-ng
-tuenti-ng-push = http://push.code.tuenti.int/tuenti/tuenti-ng
+#config-package  = http://pull.code.tuenti.int/devops/config-package
+#config-package-push   = http://push.code.tuenti.int/devops/config-package
+#data-development = http://pull.code.tuenti.int/devops/data-development
+#data-development-push = http://push.code.tuenti.int/devops/data-development
+#templates = http://pull.code.tuenti.int/devops/templates
+#templates-push = http://push.code.tuenti.int/devops/templates
+#tuenti-dev = http://pull.code.tuenti.int/tuenti/tuenti-dev
+#tuenti-dev-push = http://push.code.tuenti.int/tuenti/tuenti-dev
+#tuenti-ng = http://pull.code.tuenti.int/tuenti/tuenti-ng
+#tuenti-ng-push = http://push.code.tuenti.int/tuenti/tuenti-ng
 
 
 [merge-patterns]
@@ -89,19 +90,17 @@ msgcat.args = --use-first --sort-output --no-wrap --output-file $output $other $
 
 
 
-[ui]
-username = nick
 
 #[auth]
 #push.prefix = push.code.tuenti.int
-#push.username = nick
+#push.username = nicholas
 #push.schemes = http
 #
 #pull.prefix = pull.code.tuenti.int
-#pull.username = nick
+#pull.username = nicholas
 #pull.schemes = http
 #
 #[paths]
-#android-messenger = http://nick@pull.code.tuenti.int/mobileapps/android-messenger
-#android-messenger-push = http://nick@push.code.tuenti.int/mobileapps/android-messenger
+#android-messenger = http://nicholas@pull.code.tuenti.int/mobileapps/android-messenger
+#android-messenger-push = http://nicholas@push.code.tuenti.int/mobileapps/android-messenger
 

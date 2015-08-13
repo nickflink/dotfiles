@@ -1,13 +1,13 @@
 [user]
   name = Nicholas Flink
-  email = nicholas@sproutsocial.com
+  email = nickflink@github.com
 [color]
   ui = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [url "http://"]
-	insteadOf = git://
-	insteadOf = https://
+  insteadOf = git://
+  insteadOf = https://
 [core]
     editor = vim #Default editor
 [push]

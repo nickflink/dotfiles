@@ -1,6 +1,6 @@
 [user]
-  name = Nick Flink
-  email = nickflink@github.com
+  name = Nicholas Flink
+  email = nicholas@sproutsocial.com
 [color]
   ui = true
 [credential]
@@ -8,3 +8,17 @@
 [url "http://"]
 	insteadOf = git://
 	insteadOf = https://
+[core]
+    editor = vim #Default editor
+[push]
+    default = simple #Only push the current branch I am on
+[alias]  #These are all my git aliases. For example to difftool I can just call 'git ds'
+    co = checkout
+    br = branch
+    ci = commit
+    st = status
+    ds = difftool --dir-diff --staged #Pull up all the currently staged files in meld at once
+    df = difftool --dir-diff #Pull up all the currently modified, non-staged files in meld at once
+    lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)'  #A much prettier git log for my current branch
+    lga = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all #A much prettier git log for all branches
+    clog = log --graph --full-history --all --color --pretty=format:'%C(yellow)%h %C(green)%d %C(red)%ce %C(cyan)%cr %C(reset)%s'

@@ -30,7 +30,13 @@ autocmd Filetype python set makeprg=pychecker
 autocmd Filetype python map <F5> :!python % <CR>
 autocmd Filetype python map <F7> :make % <CR>
 autocmd Filetype python set expandtab
-
+autocmd Filetype python match ErrorMsg '\%>500v.\+'
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  golang
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=$GOROOT/misc/vim
+filetype plugin indent on
+syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

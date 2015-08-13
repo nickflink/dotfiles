@@ -1,5 +1,6 @@
+REMOTE_PATH="$1"
 while :; do
-  OUT=`hg out -l1`
+  OUT=`hg out $REMOTE_PATH -l1`
   REV=`echo "$OUT"|grep ^changeset|awk '{gsub(":"," ");print $3}'`;
   if ["$REV" == ""]; then
     break;

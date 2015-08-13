@@ -16,6 +16,10 @@ if [ -d $HOME/bin ] ; then
     PATH=$HOME/bin:/usr/local/bin:"${PATH}"
 fi
 
+if [ -d $HOME/depot_tools ] ; then  
+    PATH=$HOME/depot_tools:"${PATH}"
+fi
+
 alias p4st="pushd $P4ROOT;/usr/local/bin/perforce_status|less;popd"
 alias gitp4on="cp $HOME/.gitconfig-p4 $HOME/.gitconfig"
 alias gitp4off="cp $HOME/.gitconfig-cmd $HOME/.gitconfig"
@@ -24,9 +28,6 @@ alias gitcdiff="git diff --color"
 alias gitsubpnu="git pull && git submodule foreach --recursive git submodule init && git submodule foreach --recursive git submodule update && git submodule foreach --recursive git submodule status"
 alias cdft="cd $HOME/Projects/GameDev/C4FlipCC"
 alias cdms="cd $HOME/Projects/MacSetup"
-alias badtest="mvn clean install -Ptests,sign -Dtuenti.api_endpoint=https://web2.${USER}vm.testing.tuenti.local/index.msngr.php -Dtuenti.tuentomatic_endpoint=http://tuentomatic.${USER}vm.testing.tuenti.local -Dandroid.lint.skip=true -DskipTests -Pfull"
-alias badmvn="time ( mvn clean install -Parmeabi-v7a,sign,fast && mvn android:{deploy,run} -pl app )"
-alias armbadmvn="time (mvn clean install -Parmeabi,armeabi-v7a,sign,fast && mvn android:{deploy,run} -pl app )"
 
 # MacPorts Installer addition on 2011-07-09_at_19:15:09: adding an appropriate PATH variable for use with MacPorts.
 #export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
@@ -51,7 +52,10 @@ elif [ -f /Applications/Imagination/PowerVR/GraphicsSDK/PVRTexTool/CLI/OSX_x86/P
 fi
 #end pvr stuff
 #Android / Java specific stuff
-if [ -d /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK ] ; then
+if [ -d /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home ]; then
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
+    export JAVA_SRC="${JAVA_HOME}"
+elif [ -d /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK ] ; then
     #darwin
     export JAVA_HOME="/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home"
     export JAVA_SRC="${JAVA_HOME}/bundle"
@@ -79,6 +83,11 @@ export COCOS_CONSOLE_ROOT=$HOME/gdoroot/Syn/cocos2d-x/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # python django stuff
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/directory-you-do-development-in
+#export PROJECT_HOME=$HOME/directory-you-do-development-in
+
+export WORKON_HOME=${HOME}/Envs
+mkdir -p $WORKON_HOME
 source /usr/local/bin/virtualenvwrapper.sh
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+[[ -s "$HOME/.ss/profile" ]] && source "$HOME/.ss/profile"

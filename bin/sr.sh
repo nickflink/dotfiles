@@ -1,14 +1,15 @@
-#!bin/bash
-if [ 2 -ge $# ]; then
+#!/bin/bash
+if [ $# -ge 2 ]; then
   SRCH="$1";
   REPL="$2"
-  FILE_TYPE="$3"
-  if [ "$FILE_TYPE" == "" ]; then
-    FILE_TYPE="*"
+  FILE_EXT="*.$3"
+  if [ "$FILE_EXT" == "" ]; then
+    FILE_EXT="*"
   fi
-  for i in `find . -type f -name "$FILETYPE" -exec grep -l "$SRCH" {} +\;`; do
+  echo "# find . -type f -name \"$FILE_EXT\" -exec grep -l \"$SRCH\" {} +;";
+  for i in `find . -type f -name "$FILE_EXT" -exec grep -l "$SRCH" {} +\;`; do
     echo "sed -i '' 's/$SRCH/$REPL/g' $i";
   done
 else
-  echo "sr.sh SRCH REPL [FILE_TYPE]"
+  echo "sr.sh SRCH REPL [FILE_EXT]"
 fi

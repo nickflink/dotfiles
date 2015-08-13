@@ -7,29 +7,25 @@ transplant =
 rebase =
 record =
 bookmarks =
-#shelve = /usr/lib/tuenti_tools/mercurial/extensions/hgshelve.py
-#prompt = /usr/lib/tuenti_tools/mercurial/extensions/prompt.py
-#branchtools = /usr/lib/tuenti_tools/mercurial/extensions/branchtools.py
+#shelve = /path/to/mercurial/extensions/hgshelve.py
+#prompt = /path/to/mercurial/extensions/prompt.py
+#branchtools = /path/to/mercurial/extensions/branchtools.py
 fetch =
 #histedit =
-#onsub = /usr/lib/tuenti_tools/mercurial/extensions/onsub.py
-#keyring = /usr/lib/tuenti_tools/mercurial/extensions/keyring.py
+#onsub = /path/to/mercurial/extensions/onsub.py
+#keyring = /path/to/mercurial/extensions/keyring.py
+pager =
 
-[auth]
-#master-relay.prefix = http://code.tuenti.int
-#mad-relay.prefix = http://mad.code.tuenti.local
-#cache-relay.prefix = http://cache.code.tuenti.int
-#pull-relay.prefix = http://pull.code.tuenti.int
-#push-relay.prefix = http://push.code.tuenti.int
-#push-relay.username = nicholas
-#pull-relay.username = nicholas
+[pager]
+pager = LESS='FRX' less
+
 
 [trusted]
 users = *
 
 [defaults]
-glog = -l 5
 fetch = -e
+log = -f
 
 [ui]
 username = Nicholas Flink <nicholas@sproutsocial.com>
@@ -46,34 +42,6 @@ sout = outgoing --template '{node|short} {date|isodate} {author} {branch} {desc|
 [bookmarks]
 track.current = True
 
-#[hooks]
-#precommit.localhooks_install=/usr/lib/tuenti_tools/mercurial/hooks/install_localhooks.sh
-#precommit.block_patch_repos=/usr/lib/tuenti_tools/mercurial/hooks/block_patch_repos.sh
-#post-clone.install_localhooks=/usr/lib/tuenti_tools/mercurial/hooks/post_clone_install_localhooks.py
-#post-clone.install_default_push=/usr/lib/tuenti_tools/mercurial/hooks/install_default_push.sh
-
-[patch-repos]
-data-development=2c2cb8027f355ff154603b59c297707b13d3cbd7
-data-systems=eb97442ade7919d615f7ed8e993da60deb2a2dd2
-[patch-paths]
-#data-development=http://pull.code.tuenti.int/devops/data-development
-#data-development-push=http://push.code.tuenti.int/devops/data-development
-#data-systems=ssh://hades.tuenti.int//srv/hg/ops/data-systems
-
-#Convenience paths for the mercurial relays
-[paths]
-#config-package  = http://pull.code.tuenti.int/devops/config-package
-#config-package-push   = http://push.code.tuenti.int/devops/config-package
-#data-development = http://pull.code.tuenti.int/devops/data-development
-#data-development-push = http://push.code.tuenti.int/devops/data-development
-#templates = http://pull.code.tuenti.int/devops/templates
-#templates-push = http://push.code.tuenti.int/devops/templates
-#tuenti-dev = http://pull.code.tuenti.int/tuenti/tuenti-dev
-#tuenti-dev-push = http://push.code.tuenti.int/tuenti/tuenti-dev
-#tuenti-ng = http://pull.code.tuenti.int/tuenti/tuenti-ng
-#tuenti-ng-push = http://push.code.tuenti.int/tuenti/tuenti-ng
-
-
 [merge-patterns]
 **.jpg = internal:fail
 **.exe = internal:fail
@@ -84,23 +52,3 @@ data-systems=eb97442ade7919d615f7ed8e993da60deb2a2dd2
 
 [merge-tools]
 msgcat.args = --use-first --sort-output --no-wrap --output-file $output $other $base
-
-
-
-
-
-
-
-#[auth]
-#push.prefix = push.code.tuenti.int
-#push.username = nicholas
-#push.schemes = http
-#
-#pull.prefix = pull.code.tuenti.int
-#pull.username = nicholas
-#pull.schemes = http
-#
-#[paths]
-#android-messenger = http://nicholas@pull.code.tuenti.int/mobileapps/android-messenger
-#android-messenger-push = http://nicholas@push.code.tuenti.int/mobileapps/android-messenger
-

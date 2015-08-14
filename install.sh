@@ -24,14 +24,16 @@ function link_dotfile() {
     READ_LINK=`readlink ${DST}`
     if [ "${READ_LINK}" != "${SRC}" ]; then
         $BAK_CMD
-        echo "[BAK] $BAK_CMD"
-    fi
-    $LINK_CMD
-    SUCCESS=`ls -la ${DST} | grep -o ${SRC}`;
-    if [ "${SUCCESS}" == "${SRC}" ]; then
-        echo "[OK] ${LINK_CMD}";
+        echo "[BACKUP] $BAK_CMD"
+        $LINK_CMD
+        SUCCESS=`ls -la ${DST} | grep -o ${SRC}`;
+        if [ "${SUCCESS}" == "${SRC}" ]; then
+            echo "[OK] ${LINK_CMD}";
+        else
+            echo "[KO] ${LINK_CMD}";
+        fi
     else
-        echo "[KO] ${LINK_CMD}";
+        echo "[SKIP] ${LINK_CMD}";
     fi
 }
 

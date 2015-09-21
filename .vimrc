@@ -7,7 +7,8 @@ set number
 set shiftwidth=2
 set tabstop=2
 set expandtab
-set list
+set list listchars=tab:»·,trail:·
+
 set hlsearch
 set ignorecase
 set foldmethod=indent
@@ -41,8 +42,9 @@ syntax on
 "  plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 source $HOME/.vim/a.vim
-source $HOME/.vim/matchit.vim
 source $HOME/.vim/html.vim
+source $HOME/.vim/matchit.vim
+source $HOME/.vim/pig.vim
 filetype plugin on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "  unicode suppoort

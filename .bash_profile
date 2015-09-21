@@ -28,6 +28,7 @@ alias gitcdiff="git diff --color"
 alias gitsubpnu="git pull && git submodule foreach --recursive git submodule init && git submodule foreach --recursive git submodule update && git submodule foreach --recursive git submodule status"
 alias cdft="cd $HOME/Projects/GameDev/C4FlipCC"
 alias cdms="cd $HOME/Projects/MacSetup"
+alias gh="hg --config=hooks.precommit.lint="
 
 # MacPorts Installer addition on 2011-07-09_at_19:15:09: adding an appropriate PATH variable for use with MacPorts.
 #export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
@@ -52,7 +53,10 @@ elif [ -f /Applications/Imagination/PowerVR/GraphicsSDK/PVRTexTool/CLI/OSX_x86/P
 fi
 #end pvr stuff
 #Android / Java specific stuff
-if [ -d /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home ]; then
+if [ -d /Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home ]; then
+    export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home"
+    export JAVA_SRC="${JAVA_HOME}"
+elif [ -d /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home ]; then
     export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home"
     export JAVA_SRC="${JAVA_HOME}"
 elif [ -d /System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK ] ; then

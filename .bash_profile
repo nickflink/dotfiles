@@ -89,9 +89,11 @@ export PATH=$COCOS_CONSOLE_ROOT:$PATH
 # python django stuff
 #export PROJECT_HOME=$HOME/directory-you-do-development-in
 
-export WORKON_HOME=${HOME}/Envs
-mkdir -p $WORKON_HOME
-source /usr/local/bin/virtualenvwrapper.sh
+if [ -f "/usr/local/bin/virtualenvwrapper.sh" ]; then
+    export WORKON_HOME=${HOME}/Envs
+    mkdir -p $WORKON_HOME
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.ss/profile" ]] && source "$HOME/.ss/profile"

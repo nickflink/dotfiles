@@ -7,6 +7,7 @@ transplant =
 rebase =
 record =
 bookmarks =
+shelve =
 #shelve = /path/to/mercurial/extensions/hgshelve.py
 #prompt = /path/to/mercurial/extensions/prompt.py
 #branchtools = /path/to/mercurial/extensions/branchtools.py
@@ -31,7 +32,7 @@ log = -f
 username = Nicholas Flink <nicholas@sproutsocial.com>
 msgcat = msgcat
 merge = internal:merge
-ssh = ssh -C -c arcfour
+#ssh = ssh -C -c arcfour
 
 [alias]
 bheads = log -r "heads(branch(.))"

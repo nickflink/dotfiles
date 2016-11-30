@@ -97,3 +97,8 @@ fi
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.ss/profile" ]] && source "$HOME/.ss/profile"
+
+if [ -d /usr/local/Cellar/mysql55/5.5.49/bin/ ]; then
+    PATH=/usr/local/Cellar/mysql55/5.5.49/bin/:$PATH
+fi
+source ~/.sproutrc

@@ -11,7 +11,8 @@
 [core]
   editor = vim #Default editor
 [push]
-  default = tracking #Only push the current branch I am on
+  #default = tracking #Only push the current branch I am on
+  default = simple
 [alias]  #These are all my git aliases. For example to difftool I can just call 'git ds'
   co = checkout
   br = branch
@@ -23,7 +24,8 @@
   lga = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all #A much prettier git log for all branches
   clog = log --graph --full-history --all --color --pretty=format:'%C(yellow)%h %C(green)%d %C(red)%ce %C(cyan)%cr %C(reset)%s'
   glog = log --graph --full-history --all --color --date=iso --pretty=format:'%C(yellow)%h %C(green)%d %C(red)%ce %C(cyan)%ai %C(reset)%s'
-	d = difftool
+  d = difftool
+  pr = !"pr() { git fetch $1 pull/$2/head:pr-$2; git checkout pr-$2; }; pr"
 [diff]
 	tool = vimdiff
 [difftool]

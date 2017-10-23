@@ -101,4 +101,7 @@ fi
 if [ -d /usr/local/Cellar/mysql55/5.5.49/bin/ ]; then
     PATH=/usr/local/Cellar/mysql55/5.5.49/bin/:$PATH
 fi
+if [ -d /usr/local/opt/mysql@5.5/bin/ ]; then
+    PATH=/usr/local/opt/mysql@5.5/bin/:$PATH
+fi
 source ~/.sproutrc

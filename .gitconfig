@@ -10,6 +10,7 @@
   insteadOf = https://
 [core]
   editor = vim #Default editor
+  ignoreCase = false
 [push]
   #default = tracking #Only push the current branch I am on
   default = simple
@@ -29,4 +30,4 @@
 [diff]
 	tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false

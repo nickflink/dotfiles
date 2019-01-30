@@ -58,3 +58,7 @@ if has("multi_byte")
   "setglobal bomb
   set fileencodings=ucs-bom,utf-8,latin1
 endif
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  store swap files in their own directory
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set directory=~/.vim/swapfiles//

@@ -29,6 +29,7 @@ alias gitsubpnu="git pull && git submodule foreach --recursive git submodule ini
 alias cdft="cd $HOME/Projects/GameDev/C4FlipCC"
 alias cdms="cd $HOME/Projects/MacSetup"
 alias gh="hg --config=hooks.precommit.lint="
+alias sandbox='yarn sandbox'
 
 # MacPorts Installer addition on 2011-07-09_at_19:15:09: adding an appropriate PATH variable for use with MacPorts.
 #export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:$PATH
@@ -69,8 +70,8 @@ elif [ -d /usr/lib/jvm/java-6-sun ] ; then
     export JAVA_SRC="${JAVA_HOME}"
 fi
 export ANT_ROOT=/usr/share/ant
-export ANDROID_NDK_ROOT=$HOME/android-ndks/android-ndk-r9d
-export ANDROID_SDK_ROOT=$HOME/android-sdk
+export ANDROID_NDK_ROOT=$HOME/Library/Android/sdk/ndk-bundle
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
 export ANDROID_HOME=$ANDROID_SDK_ROOT
 export ANDROID_SDK=$ANDROID_SDK_ROOT
 export ANDROID_NDK_HOME=$ANDROID_NDK_ROOT
@@ -83,7 +84,7 @@ PATH=$ANDROID_NDK_HOME/toolchains/arm-linux-androideabi-4.4.3/prebuilt/darwin-x8
 export PATH=$HOME/bin:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:$PATH
 
 # Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=$HOME/gdoroot/Syn/cocos2d-x/tools/cocos2d-console/bin
+export COCOS_CONSOLE_ROOT=/Users/nicholasflink/gdo/cocos2d-x/tools/cocos2d-console/bin
 export PATH=$COCOS_CONSOLE_ROOT:$PATH
 
 # python django stuff
@@ -104,4 +105,33 @@ fi
 if [ -d /usr/local/opt/mysql@5.5/bin/ ]; then
     PATH=/usr/local/opt/mysql@5.5/bin/:$PATH
 fi
-source ~/.sproutrc
+if [ -d /usr/local/opt/mysql@5.6/bin/ ]; then
+    PATH=/usr/local/opt/mysql@5.6/bin/:$PATH
+fi
+if [ -d $HOME/Bloom ]; then
+    export BLOOM_HOME="$HOME/Bloom"
+    if [ -d $BLOOM_HOME/bloom-devops ]; then
+        export BLOOM_DEVOPS="$BLOOM_HOME/bloom-devops"
+    fi
+fi
+# Set up NVM
+if [ -f "/usr/local/opt/nvm/nvm.sh" ]; then
+    export NVM_DIR="$HOME/.nvm"
+    mkdir -p $NVM_DIR
+    . "/usr/local/opt/nvm/nvm.sh"
+fi
+if [ -f ~/.sproutrc ]; then
+    source ~/.sproutrc
+fi
+
+if [ -d ~/.fastlane/bin ]; then
+    export PATH="$HOME/.fastlane/bin:$PATH"
+fi
+export SPROUT_LDAP_USER=nicholas
+
+# Chef stuff
+if [ -d ~/ss/dev/infra_chef/encrypted_data_bag_secret ]; then
+    eval "$(rbenv init -)"
+    export SOLVE_TIMEOUT=1000
+    export ENCRYPTED_DATA_BAG_PATH="~/ss/dev/infra_chef/encrypted_data_bag_secret"
+fi
